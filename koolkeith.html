@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kool Keith Rhyme Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #rhyme-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kool Keith Rhyme Generator</h1>
+    <div id="rhyme-container"></div>
+
+    <script>
+        // Function to generate a random Kool Keith style rhyme
+        function generateRhyme() {
+            const subjects = ['doctor', 'alien', 'robot', 'spaceship', 'microphone'];
+            const verbs = ['diagnose', 'synthesize', 'penetrate', 'levitate', 'vibrate'];
+            const adjectives = ['electronic', 'hypnotic', 'intergalactic', 'fantastic', 'automatic'];
+
+            const subject = subjects[Math.floor(Math.random() * subjects.length)];
+            const verb = verbs[Math.floor(Math.random() * verbs.length)];
+            const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+
+            return `I'm the ${adjective} ${subject}, I ${verb} like no other.`;
+        }
+
+        // Function to update the rhyme on the page
+        function updateRhyme() {
+            const rhymeContainer = document.getElementById('rhyme-container');
+            rhymeContainer.textContent = generateRhyme();
+        }
+
+        // Initial rhyme generation on page load
+        updateRhyme();
+
+        // Event listener to generate a new rhyme on page refresh
+        window.addEventListener('load', updateRhyme);
+    </script>
+</body>
+</html>
